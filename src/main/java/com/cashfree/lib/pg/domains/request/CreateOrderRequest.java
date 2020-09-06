@@ -31,6 +31,8 @@ public class CreateOrderRequest {
 
   private String sellerPhone;
 
+  private String vendorSplit;
+
   @NotNull
   private String returnUrl;
 
