@@ -54,7 +54,7 @@ public class Vendors {
         GetVendorResponse body = marketplaceSettlements.performGetRequest(
                 MarketplaceSettlementsConstants.GET_VENDOR_REL_URL + "/" + vendorId, GetVendorResponse.class);
         if (200 == body.getSubCode()) {
-            return body.getData().getVendorDetails();
+            return body.getData();
         } else if (404 == body.getSubCode()) {
             throw new ResourceDoesntExistException("Vendor does not exist");
         }
@@ -75,7 +75,7 @@ public class Vendors {
     public List<VendorDetails> getVendorsDetails(String relUrl) {
         GetVendorsResponse body = marketplaceSettlements.performGetRequest(relUrl, GetVendorsResponse.class);
         if (200 == body.getSubCode()) {
-            return body.getData().getVendorDetailsList();
+            return body.getData();
         } else if (412 == body.getSubCode()) {
             throw new IllegalPayloadException("Invalid maxReturn value passed");
         }
