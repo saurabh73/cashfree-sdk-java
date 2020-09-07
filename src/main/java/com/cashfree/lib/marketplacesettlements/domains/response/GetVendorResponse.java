@@ -11,11 +11,5 @@ import lombok.experimental.Accessors;
 @ToString(callSuper=true)
 @EqualsAndHashCode(callSuper = true)
 public class GetVendorResponse extends CfMarketplaceSettlementsResponse {
-    private Payload data;
-
-    @Data
-    @Accessors(chain = true)
-    public static final class Payload {
-        private VendorDetails vendorDetails;
-    }
+    private VendorDetails data;
 }

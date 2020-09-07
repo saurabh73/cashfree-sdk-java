@@ -21,15 +21,10 @@ import java.util.List;
 @ToString(callSuper=true)
 @EqualsAndHashCode(callSuper = true)
 public class GetVendorsResponse  extends CfMarketplaceSettlementsResponse {
-    private Payload data;
+    @Deserialize(using = ListDeserializer.class)
+    private List<VendorDetails> data;
+    private String lastReturnId;
 
-    @Data
-    @Accessors(chain = true)
-    public static final class Payload {
-        @Deserialize(using = ListDeserializer.class)
-        private List<VendorDetails> vendorDetailsList;
-        private String lastReturnId;
-    }
 
     public static final class ListDeserializer implements JsonFieldDeserializer<List<VendorDetails>> {
         public ListDeserializer() {
