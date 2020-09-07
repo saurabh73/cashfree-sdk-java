@@ -11,13 +11,7 @@ import com.cashfree.lib.marketplacesettlements.domains.request.EditVendorRequest
 import com.cashfree.lib.marketplacesettlements.domains.response.CfMarketplaceSettlementsResponse;
 import com.cashfree.lib.marketplacesettlements.domains.response.GetVendorResponse;
 import com.cashfree.lib.marketplacesettlements.domains.response.GetVendorsResponse;
-import com.cashfree.lib.payout.constants.PayoutConstants;
-import com.cashfree.lib.payout.domains.BeneficiaryDetails;
-import com.cashfree.lib.payout.domains.response.GetBeneficiaryResponse;
-import com.cashfree.lib.payout.domains.response.GetTransfersResponse;
 
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 import java.util.List;
 
 public class Vendors {
@@ -62,7 +56,7 @@ public class Vendors {
     }
 
     public List<VendorDetails> getVendorsDetails(Integer maxReturn, Integer lastReturnId) {
-        UriBuilder uri = UriBuilder.fromUriString(PayoutConstants.GET_TRANSFERS_REL_URL);
+        UriBuilder uri = UriBuilder.fromUriString(MarketplaceSettlementsConstants.GET_VENDORS_REL_URL);
         if (maxReturn != null) {
             uri.queryParam("maxReturn", maxReturn.toString());
         }
