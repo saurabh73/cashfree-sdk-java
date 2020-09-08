@@ -37,7 +37,7 @@ public class VendorDetails {
 
     private String gstin;
 
-    private VendorStatus status;
+    private String status;
 
     private String commission;
 

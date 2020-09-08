@@ -116,8 +116,6 @@ public class MarketplaceSettlements {
 
     <Response extends CfMarketplaceSettlementsResponse> Response performGetRequest(String relUrl, Class<Response> clazz) {
         Map<String, String> authHeaders = buildAuthHeader();
-        System.out.println(endpoint + relUrl);
-        System.out.println(authHeaders.get("Authorization"));
         Response body =
                 HttpUtils.performGetRequest(endpoint + relUrl, authHeaders, clazz);
         if (body == null) {
