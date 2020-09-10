@@ -3,7 +3,6 @@ package com.cashfree.lib.pg.clients;
 import java.util.Map;
 import java.util.HashMap;
 
-import com.cashfree.lib.pg.domains.request.OrderTokenRequest;
 import com.cashfree.lib.utils.CommonUtils;
 
 import com.cashfree.lib.pg.domains.response.*;
@@ -15,11 +14,6 @@ public class Order {
 
   public Order(Pg pg) {
     this.pg = pg;
-  }
-
-  public OrderTokenResponse createOrderToken(OrderTokenRequest request) {
-    return pg.performPostRequest(
-            PgConstants.ORDER_TOKEN_GENERATE_REL_URL, request, OrderTokenRequest.class, OrderTokenResponse.class);
   }
 
   public CreateOrderResponse createOrder(CreateOrderRequest request) {

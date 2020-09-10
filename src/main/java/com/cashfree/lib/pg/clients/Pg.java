@@ -18,11 +18,13 @@ import com.cashfree.lib.pg.constants.Endpoints;
 import com.cashfree.lib.http.ObjectMappingUtils;
 import com.cashfree.lib.pg.constants.PgConstants;
 import com.cashfree.lib.pg.domains.response.VerifyCredentialsResponse;
+import lombok.Getter;
 
 public class Pg {
   private String appId;
   private String secretKey;
 
+  @Getter
   private String endpoint;
 
   private static Pg SINGLETON_INSTANCE;

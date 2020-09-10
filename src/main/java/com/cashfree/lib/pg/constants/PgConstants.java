@@ -28,6 +28,4 @@ public class PgConstants {
   public static final String SETTLEMENT_REL_URL = PG_REL_URL + VERSION + "/settlement";
 
   public static final String CREDENTIALS_VERIFY_REL_URL = PG_REL_URL + VERSION + "/credentials/verify";
-
-  public static final String ORDER_TOKEN_GENERATE_REL_URL = PG_REL_URL + "/v2/cftoken/order";
 }
